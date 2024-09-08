@@ -7,31 +7,24 @@
 string1 = input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32: ')
 string2 = input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32: ')
 n = len(string1)
-bitAnd = ''
-bitOr = ''
-bitXor = ''
 resultAnd = []
 resultOr = []
 resultXor = []
 for i in range (n):
-  if string1[i] == 1 and  string2[i] == 1:
-    bitAnd = '1'
-    resultAnd.append(bitAnd)
+  if string1[i] == '1' and  string2[i] == '1':
+    resultAnd.append('1')
   else:
-    bitAnd = '0'
-    resultAnd.append(bitAnd)
-  if string1[i] == 1 or  string2[i] == 1:
-    bitOr = '1'
-    resultOr.append(bitOr)
+    resultAnd.append('0')
+for i in range (n):
+  if string1[i] == '1' or  string2[i] == '1':
+    resultOr.append('1')
   else:
-    bitOr = '0'
-    resultOr.append(bitOr)
+    resultOr.append('0')
+for i in range (n):
   if string1[i] != string2[i] :
-    bitXor = '1'
-    resultXor.append(bitXor)
+    resultXor.append('1')
   else:
-    bitXor = '0'
-    resultXor.append(bitXor)
+    resultXor.append('0')
 
 
 print(f'Bitwise And result is {resultAnd} Bitwise Or result is {resultOr} Bitwise XOR result is {resultXor}')
