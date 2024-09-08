@@ -4,8 +4,8 @@
 #LAB Assignment 01
 # Description : Write a program that takes 2 inputs strings and produces them as output of bitwise and, or or XOR
 # Collaborators: NONE
-string1 = print(input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32'))
-string2 = print(input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32'))
+string1 = input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32')
+string2 = input('Enter your 2 bit strings with a length greater than or equal to 1 and less than or equal to 32')
 n = len(string1)
 bitAnd = ''
 bitOr = ''
