@@ -30,12 +30,10 @@ for i in inputList:
     function = False
     print ('not function')
 # checking if function is onto
-if function == True:
   for i in checkOntoList:
     if i not in outputList:
       onto = False
 # checking if function is one-to-one
-if function == True :
   for i in inputList:
     if outputList.count(i) > 1:
       oneToOne = False
