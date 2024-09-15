@@ -28,11 +28,11 @@ for i in splitInput:
   #if inputList.count(i) > 1:
     #function = False
 
-inputListSet = set()
+inputListCheck = []
 for i in inputList:
-  if i in inputListSet:
+  if i in inputListCheck:
     function = False
-  inputListSet.add(i)
+  inputListCheck.append(i)
   
   
 # checking if function is onto
@@ -44,11 +44,11 @@ for i in checkOntoList:
  # for i in inputList:
    # if outputList.count(i) > 1:
      # oneToOne = False
-outputListSet = set()
+outputListCheck = []
 for i in outputList:
-  if i in outputListSet:
+  if i in outputListCheck:
     oneToOne = False
-  outputListSet.add(i)
+  outputListCheck.append(i)
   
 
 #printing output
