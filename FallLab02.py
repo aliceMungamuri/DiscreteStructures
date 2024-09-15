@@ -32,11 +32,11 @@ for i in inputList:
 # checking if function is onto
 if function == True:
   for i in checkOntoList:
-    if i not in outputLIst:
+    if i not in outputList:
       onto = False
 # checking if function is one-to-one
 if function :
-  for i in inputLIst:
+  for i in inputList:
     if outputList.count(i) > 1:
       oneToOne = False
 #printing output
