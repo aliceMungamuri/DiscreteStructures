@@ -9,7 +9,7 @@ input = input('Enter your input pairs in the form\n (4,F)(5,G)(4,H)\n The inputs
 print(input)
 
 function = True
-one-to-one = True
+oneToOne = True
 onto = True
 checkOntoList = [A,B,C,D,E,F,G,H]
 
@@ -38,17 +38,17 @@ if function == True:
 if function :
   for i in inputLIst:
     if outputList.count(i) > 1:
-      one-to-one = False
+      oneToOne = False
 #printing output
 if function == False:
   print('not function')
-elif function == True and onto == True and one-to-one == True:
+elif function == True and onto == True and oneToOne == True:
   print('function, one-to-one, onto')
-elif function == True and onto == False and one-to-one == True:
+elif function == True and onto == False and oneToOne == True:
   print('function, not onto, one-to-one')
-elif function == True and onto == True and one-to-one == False:
+elif function == True and onto == True and oneToOne == False:
   print('function, onto, not one-to-one')
-elif function == True and onto == False and one-to-one == False:
+elif function == True and onto == False and oneToOne == False:
   print('function, not onto, not one-to-one')
   
   
