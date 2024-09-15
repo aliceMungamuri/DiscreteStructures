@@ -12,28 +12,26 @@ oneToOne = True
 onto = True
 checkOntoList = ['A','B','C','D','E','F','G','H']
 
-
+# splitting the pairs
 splitInput = input.split(')(')
 
-inputList = []
-outputList = []
+inputList = [] # list of the inputs
+outputList = [] # list of the outputs
 
+# adding to the respective lists, this fully works
 for i in splitInput:
   in_, out = i.split(',')
   inputList.append(in_)
   outputList.append(out)
 
-# Checking if multiple inputs bc that means its not a function
-#for i in inputList:
-  #if inputList.count(i) > 1:
-    #function = False
-
-inputListCheck = []
+# Checking if multiple inputs bc that means its not a function THIS IS IFFY
+print(inputList)
+inputListCheck = set()
 for i in inputList:
   if i in inputListCheck:
     function = False
-  inputListCheck.append(i)
-  
+    break
+  inputListCheck.add(i)
   
 # checking if function is onto
 for i in checkOntoList:
@@ -44,11 +42,12 @@ for i in checkOntoList:
  # for i in inputList:
    # if outputList.count(i) > 1:
      # oneToOne = False
-outputListCheck = []
+outputListCheck = set()
 for i in outputList:
   if i in outputListCheck:
     oneToOne = False
-  outputListCheck.append(i)
+    break
+  outputListCheck.add(i)
   
 
 #printing output
