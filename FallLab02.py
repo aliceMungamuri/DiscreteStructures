@@ -25,7 +25,7 @@ for i in splitInput:
   outputList.append(out)
 
 # Checking if multiple inputs
-for i in inputLIst:
+for i in inputList:
   if inputList.count(i) > 1:
     function = False
     print ('not function')
