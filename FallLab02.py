@@ -10,10 +10,11 @@ num = 0
 function = True
 oneToOne = True
 onto = True
-checkOntoList = ['A','B','C','D','E','F','G','H']
 
+input1 = input[1:] # Basically because of the way I split it the first and last parentheses would be included in the input so I had to slice it
+input2 = input1[:-1]
 # splitting the pairs
-splitInput = input.split(')(')
+splitInput = input2.split(')(')
 
 inputList = [] # list of the inputs
 outputList = [] # list of the outputs
@@ -34,9 +35,12 @@ for i in inputList:
   inputListCheck.add(i)
   
 # checking if function is onto
+checkOntoList = ['A','B','C','D','E','F','G','H']
 for i in checkOntoList:
   if i not in outputList:
     onto = False
+    break
+
     
 # checking if function is one-to-one
  # for i in inputList:
@@ -53,13 +57,13 @@ for i in outputList:
 #printing output
 if function == False:
   print('not function')
-if function == True and onto == True and oneToOne == True:
+elif function == True and onto == True and oneToOne == True:
   print('function, one-to-one, onto')
-if function == True and onto == False and oneToOne == True:
+elif function == True and onto == False and oneToOne == True:
   print('function, not onto, one-to-one')
-if function == True and onto == True and oneToOne == False:
+elif function == True and onto == True and oneToOne == False:
   print('function, onto, not one-to-one')
-if function == True and onto == False and oneToOne == False:
+elif function == True and onto == False and oneToOne == False:
   print('function, not onto, not one-to-one')
   
   
