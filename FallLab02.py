@@ -35,7 +35,7 @@ if function == True:
     if i not in outputList:
       onto = False
 # checking if function is one-to-one
-if function :
+if function == True :
   for i in inputList:
     if outputList.count(i) > 1:
       oneToOne = False
