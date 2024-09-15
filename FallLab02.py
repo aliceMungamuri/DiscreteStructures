@@ -31,7 +31,7 @@ for i in splitInput:
 inputListSet = set()
 for i in inputList:
   if i in inputListSet:
-    function == False
+    function = False
   inputListSet.add(i)
   
   
