@@ -34,6 +34,25 @@ if function == True:
   for i in checkOntoList:
     if i not in outputLIst:
       onto = False
+# checking if function is one-to-one
+if function :
+  for i in inputLIst:
+    if outputList.count(i) > 1:
+      one-to-one = False
+#printing output
+if function == False:
+  print('not function')
+elif function == True and onto == True and one-to-one == True:
+  print('function, one-to-one, onto')
+elif function == True and onto == False and one-to-one == True:
+  print('function, not onto, one-to-one')
+elif function == True and onto == True and one-to-one == False:
+  print('function, onto, not one-to-one')
+elif function == True and onto == False and one-to-one == False:
+  print('function, not onto, not one-to-one')
+  
+  
+      
 
 # Req = one to one 2 inputs cant go to one output, onto means all outputs covered not a function if an input goes to 2 outputs
   
