@@ -11,7 +11,7 @@ print(input)
 function = True
 oneToOne = True
 onto = True
-checkOntoList = [A,B,C,D,E,F,G,H]
+checkOntoList = ['A','B','C','D','E','F','G','H']
 
 
 splitInput = input.split(')(')
