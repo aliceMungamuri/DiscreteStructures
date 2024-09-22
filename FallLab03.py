@@ -10,7 +10,7 @@ b = int(input ('What is your base\n1 ≤ b ≤ 100\n'))
 n = int(input ('What is your exponent\n 1 ≤ n ≤ 500\n'))
 m = int(input ('What is your modulus\n1 ≤ m ≤ 500.\n'))
 ogN = n
-res = 0 # I didn't realize I had to  set it to one intially or it messed with my program
+res = 0 # initializing my result variablw
 # base of just b mod m
 base = b%m
 # need to keep on going until exponent is o 
