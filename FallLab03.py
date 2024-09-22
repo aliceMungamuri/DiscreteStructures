@@ -1,4 +1,4 @@
-#Name: Alice Mungamuri
+str#Name: Alice Mungamuri
 # KUID: 3117704
 # Lab Session Monday 8am
 #LAB Assignment 03
@@ -20,7 +20,7 @@ if n>0:
    res = (res*base)%m
   n = n//2 # move to next high bit --> makes it smaller
   base = (base*base)%m # taking mmod m of the square
-print(f"{b}^{n} mod {m} = {res}")
+print(f"{b}^{n} mod {m} = {str(res)}")
   
 
     
