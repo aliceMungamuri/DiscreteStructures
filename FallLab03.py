@@ -6,9 +6,9 @@ str#Name: Alice Mungamuri
 # Collaborators: None
 # Goal of lab: exponentiation by squaring
  # 
-b = input ('What is your base\n1 ≤ b ≤ 100\n')
-n = input ('What is your exponent\n 1 ≤ n ≤ 500\n')
-m = input ('What is your modulus\n1 ≤ m ≤ 500.\n')
+b = int(input ('What is your base\n1 ≤ b ≤ 100\n'))
+n = int(input ('What is your exponent\n 1 ≤ n ≤ 500\n'))
+m = int(input ('What is your modulus\n1 ≤ m ≤ 500.\n'))
 
 res = 0
 # base of just b mod m
