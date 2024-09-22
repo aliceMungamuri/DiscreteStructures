@@ -4,6 +4,7 @@
 #LAB Assignment 03
 # Description : Write a program that implements the algorithm for fast modular exponentiation 
 # Collaborators: None
+# Goal of lab: exponentiation by squaring
  # 
 b = input ('What is your base\n1 ≤ b ≤ 100')
 n = input ('What is your exponent\n 1 ≤ n ≤ 500')
