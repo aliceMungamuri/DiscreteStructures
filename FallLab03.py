@@ -9,18 +9,18 @@ str#Name: Alice Mungamuri
 b = int(input ('What is your base\n1 ≤ b ≤ 100\n'))
 n = int(input ('What is your exponent\n 1 ≤ n ≤ 500\n'))
 m = int(input ('What is your modulus\n1 ≤ m ≤ 500.\n'))
-
+ogN = n
 res = 0
 # base of just b mod m
 base = b%m
 # need to keep on going until exponent is o 
-if n>0:
+
  while n>0:
   if n%2 ==1: # checks that if its odd updates result, in binary exponentiation,  odd exponent means need to include the current base in the result least sig bit is 1.
    res = (res*base)%m
   n = n//2 # move to next high bit --> makes it smaller
   base = (base*base)%m # taking mmod m of the square
-print(f"{str(b)}^{str(n)} mod {str(m)} = {str(res)}")
+print(f"{str(b)}^{str(ogN)} mod {str(m)} = {str(res)}")
   
 
     
