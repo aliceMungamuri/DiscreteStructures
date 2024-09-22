@@ -20,7 +20,7 @@ if n>0:
    res = (res*base)%m
   n = n//2 # move to next high bit --> makes it smaller
   base = (base*base)%m # taking mmod m of the square
-print(f"{b}^{n} mod {m} = {str(res)}")
+print(f"{str(b)}^{str(n)} mod {str(m)} = {str(res)}")
   
 
     
