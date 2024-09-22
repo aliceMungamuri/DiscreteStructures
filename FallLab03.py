@@ -7,7 +7,7 @@
  # 
 b = input ('What is your base\n1 ≤ b ≤ 100')
 n = input ('What is your exponent\n 1 ≤ n ≤ 500')
-m = input ('What is your remainder\n1 ≤ m ≤ 500.')
+m = input ('What is your modulus\n1 ≤ m ≤ 500.')
 
 res = 0
 # base of just b mod m
