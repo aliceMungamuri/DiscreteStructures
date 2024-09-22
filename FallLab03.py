@@ -8,7 +8,7 @@ str#Name: Alice Mungamuri
  # 
 b = int(input ('What is your base\n1 ≤ b ≤ 100\n'))
 n = int(input ('What is your exponent\n 1 ≤ n ≤ 500\n'))
-m = int(input ('What is your modulus\n1 ≤ m ≤ 500.\n'))
+m = int(input ('What is your divisor\n1 ≤ m ≤ 500.\n'))
 ogN = n
 res = 0 # initializing my result variablw
 # base of just b mod m
