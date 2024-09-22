@@ -15,8 +15,14 @@ base = b%m
 # need to keep on going until exponent is o 
 if n>0:
  while n>0:
-    if n%2 ==1: # checks that if its odd updates result
-      res = (res*base)%m
+  if n%2 ==1: # checks that if its odd updates result
+   res = (res*base)%m
+  n = n//2
+  base = (base*base)%m
+print(f"{b}^{n} mod {m} = {res}")
+  
+
+    
    
 
 
