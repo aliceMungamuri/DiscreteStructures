@@ -18,7 +18,7 @@ if n>0:
   if n%2 ==1: # checks that if its odd updates result
    res = (res*base)%m
   n = n//2
-  base = (base*base)%m
+  base = (base*base)%m # taking mmod m of the square
 print(f"{b}^{n} mod {m} = {res}")
   
 
