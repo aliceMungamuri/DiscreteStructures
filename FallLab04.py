@@ -4,9 +4,12 @@
 #LAB Assignment 04
 # Description : Recursive search for X in a list of an
 # Collaborators: NONE
-x = int(input('What number are you searching for'))
-
+x = input('What number are you searching for')
+j = int(input('How many numbers in this list'))
 listn = []
+for i in range(j):
+  add = input('What number are you adding to the list')
+  listn.append(add)
 def search(listn, x):
   firstItem = 0
   lastItem = len(listn)
@@ -20,8 +23,8 @@ def search(listn, x):
     newSearch = search(listn,x)
         # if v is not False, add it to the left side of the window and return
         # else return False
-        return newSearch + middleSpot if newSearch != False else newSearch
-    elif listn[middleSpot] > x:
-        listn = listn[firstItem:middleSpot]
-        newSearch = search(listn,x)
-        return newSearch + firstItem if newSearch != False else newSearch
+    return newSearch + middleSpot if newSearch != False else newSearch
+  elif listn[middleSpot] > x:
+    listn = listn[firstItem:middleSpot]
+    newSearch = search(listn,x)
+    return newSearch + firstItem if newSearch != False else newSearch
