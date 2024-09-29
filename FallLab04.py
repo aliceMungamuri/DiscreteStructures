@@ -23,8 +23,8 @@ def search(listn, x):
     newSearch = search(listn,x)
         # if v is not False, add it to the left side of the window and return
         # else return False
-    print(newSearch + middleSpot if newSearch != False else newSearch)
+    print(newSearch + middleSpot )
   elif listn[middleSpot] > x:
     listn = listn[firstItem:middleSpot]
     newSearch = search(listn,x)
-    print( newSearch + firstItem if newSearch != False else newSearch)
+    print( newSearch + firstItem)
