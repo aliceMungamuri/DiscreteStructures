@@ -22,7 +22,7 @@ def search(listn, x):
     elif  listn[middleSpot] < x:
       listn = listn[middleSpot:lastItem]
       newSearch = search(listn,x)
-        # if v is not False, add it to the left side of the window and return
+        # if newSearch is not False, add it to the left side of the window and return
       print(newSearch + middleSpot +1)
     elif listn[middleSpot] > x:
       listn = listn[firstItem:middleSpot]
