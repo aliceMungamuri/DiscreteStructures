@@ -16,15 +16,18 @@ def search(listn, x):
   middleSpot = (firstItem + lastItem)//2
   if len(listn) == 1 and listn[0] != x: # this is if x isn't in the list
     print('0')
-  if  listn[middleSpot] == x:
-    print(middleSpot)
-  elif  listn[middleSpot] < x:
-    listn = listn[middleSpot:lastItem]
-    newSearch = search(listn,x)
+  else:
+    if  listn[middleSpot] == x:
+      print(middleSpot+1)
+    elif  listn[middleSpot] < x:
+      listn = listn[middleSpot:lastItem]
+      newSearch = search(listn,x)
         # if v is not False, add it to the left side of the window and return
-        # else return False
-    print(newSearch + middleSpot )
-  elif listn[middleSpot] > x:
-    listn = listn[firstItem:middleSpot]
-    newSearch = search(listn,x)
-    print( newSearch + firstItem)
+      print(newSearch + middleSpot +1)
+    elif listn[middleSpot] > x:
+      listn = listn[firstItem:middleSpot]
+      newSearch = search(listn,x)
+      print( newSearch + firstItem +1)
+search(listn,x)
+    
+  
