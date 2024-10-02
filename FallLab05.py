@@ -1,3 +1,9 @@
+#Name: Alice Mungamuri
+# KUID: 3117704
+# Lab Session Monday 8am
+#LAB Assignment 05
+# Description : Merge Sort of a list
+# Collaborators: NONE
 list1 = [] # the lists
 list2 = []
 
