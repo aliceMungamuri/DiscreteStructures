@@ -9,15 +9,15 @@ list1 = []  # the lists
 list2 = []
 
 # for setting the lists up
-n = int(input('Enter the number of numbers for list 1: '))
+n = int(input('Enter the number of elements for list 1: '))
 for i in range(0, n):
-    number = int(input('Put your number (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
-    list1.append(number)
+    element = int(input('Put your element (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
+    list1.append(element)
 
-n = int(input('Enter the number of numbers for list 2: '))
+n = int(input('Enter the number of elements for list 2: '))
 for i in range(0, n):
-    number = int(input('Put your number (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
-    list2.append(number)
+    element = int(input('Put your element (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
+    list2.append(element)
 
 def mergeList(list1, list2):
     # Base cases for recursion
@@ -28,14 +28,17 @@ def mergeList(list1, list2):
 
     # Recursive merging logic
     if list1[0] < list2[0]:
-        # Include the first number of list1 and recurse
+        # Include the first element of list1 and recurse
         return [list1[0]] + mergeList(list1[1:], list2) if list1[0] not in list2 else mergeList(list1[1:], list2)
     elif list1[0] > list2[0]:
-        # Include the first number of list2 and recurse
+        # Include the first element of list2 and recurse
         return [list2[0]] + mergeList(list1, list2[1:]) if list2[0] not in list1 else mergeList(list1, list2[1:])
     else:
-        # Both numbers are equal; skip one and recurse
+        # Both elements are equal; skip one and recurse
         return mergeList(list1[1:], list2[1:])
 
 # Print the merged list
-print(mergeList(list1, list2))
+result = mergeList(list1, list2)
+# Removing duplicates from the final output
+result = list(dict.fromkeys(result))  # Maintain order while removing duplicates
+print(result)
