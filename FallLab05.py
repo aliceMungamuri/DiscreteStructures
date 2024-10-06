@@ -1,40 +1,41 @@
 # Name: Alice Mungamuri
 # KUID: 3117704
-# Lab Session: Monday 8am
-# Lab Assignment 05
-# Description: Recursive Binary Search to find the position of an integer in an ordered list
+# Lab Session Monday 8am
+# LAB Assignment 05
+# Description: Merge two ordered lists of positive integers
+# Collaborators: NONE
 
-def recursive_binary_search(lst, target, low, high):
-    # Base case basically when the target isnt in the list
-    if low > high:
-        return 0
-    
-    # Find the middle place
-    mid = (low + high) // 2
-    
-    # is mid in the target
-    if lst[mid] == target:
-        return mid + 1  # bc index starts at 0
-    
-    # If targets smaller
-    elif target < lst[mid]:
-        return recursive_binary_search(lst, target, low, mid - 1)
-    
-    # If target is larger
+list1 = []  # the lists
+list2 = []
+
+# for setting the lists up
+n = int(input('Enter the number of numbers for list 1: '))
+for i in range(0, n):
+    number = int(input('Put your number (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
+    list1.append(number)
+
+n = int(input('Enter the number of numbers for list 2: '))
+for i in range(0, n):
+    number = int(input('Put your number (remember in increasing order and 1 ≤ n ≤ 32, 1 ≤ m ≤ 32): '))
+    list2.append(number)
+
+def mergeList(list1, list2):
+    # Base cases for recursion
+    if not list1:  # If list1 is empty
+        return list2  # Return list2
+    if not list2:  # If list2 is empty
+        return list1  # Return list1
+
+    # Recursive merging logic
+    if list1[0] < list2[0]:
+        # Include the first number of list1 and recurse
+        return [list1[0]] + mergeList(list1[1:], list2) if list1[0] not in list2 else mergeList(list1[1:], list2)
+    elif list1[0] > list2[0]:
+        # Include the first number of list2 and recurse
+        return [list2[0]] + mergeList(list1, list2[1:]) if list2[0] not in list1 else mergeList(list1, list2[1:])
     else:
-        return recursive_binary_search(lst, target, mid + 1, high)
+        # Both numbers are equal; skip one and recurse
+        return mergeList(list1[1:], list2[1:])
 
-n = int(input('Enter the number of elements for the list: '))
-lst = []
-
-# the elements for the list
-for i in range(n):
-    element = int(input(f'Enter element {i+1} (in increasing order): '))
-    lst.append(element)
-
-# Input the target num
-target = int(input('Enter the target number your looking for in the list: '))
-#calling the function
-position = recursive_binary_search(lst, target, 0, n - 1)
-
-print(position)
+# Print the merged list
+print(mergeList(list1, list2))
