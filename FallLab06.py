@@ -5,31 +5,31 @@
 # Description : Next Permutation
 # Collaborators: NONE
 
-def next_permutation(num):
-  # Convert the input number to a list of digits
+def getNextPerm(num):
+  # make the input number into a list
   digits = [int(d) for d in str(num)]
-  j = len(digits) - 2  # Step 1: Find the largest index j such that digits[j] < digits[j + 1]
+  j = len(digits) - 2  # need the largest j so jk < j(k+1)
 
   while j >= 0 and digits[j] >= digits[j + 1]:
     j -= 1
   if j < 0:
     return "No next permutation"
 
-    # Step 2: Find the smallest index k greater than j such that digits[k] > digits[j]
+    # k>j smallest index for that point
   k = len(digits) - 1
   while digits[k] <= digits[j]:
     k -= 1
 
-    # Step 3: Swap digits[j] with digits[k]
+    # switch the cells of dig[k] with dig[j]
   digits[j], digits[k] = digits[k], digits[j]
 
-    # Step 4: Reverse the sequence from j + 1 to the end of the list
+    # j+1 to the end
   digits = digits[:j + 1] + digits[j + 1:][::-1]
 
-    # Convert the list of digits back to a number
+    #.join makes it back into a number
   return int("".join(map(str, digits)))
 
 
 
-output = input(int('What is your number with n digits (no repetition) 1<= n <=10: '))
-print(next_permutation(output))
+output = int(input('What is your number with n digits (no repetition) 1<= n <=10: '))
+print(getNextPerm(output))
