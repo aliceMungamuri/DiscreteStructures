@@ -7,27 +7,27 @@
 
 def getNextPerm(num):
   # make the input number into a list
-  digits = [int(d) for d in str(num)]
-  j = len(digits) - 2  # need the largest j so jk < j(k+1)
+  indNum = [int(d) for d in str(num)]
+  j = len(indNum) - 2  # need the largest j so jk < j(k+1)
 
-  while j >= 0 and digits[j] >= digits[j + 1]:
+  while j >= 0 and indNum[j] >= indNum[j + 1]:
     j -= 1
   if j < 0:
     return "No next permutation"
 
     # k>j smallest index for that point
-  k = len(digits) - 1
-  while digits[k] <= digits[j]:
+  k = len(indNum) - 1
+  while indNum[k] <= indNum[j]:
     k -= 1
 
-    # switch the cells of dig[k] with dig[j]
-  digits[j], digits[k] = digits[k], digits[j]
+    # switch the cells of indNum[k] with indNum[j]
+  indNum[j], indNum[k] = indNum[k], indNum[j]
 
     # j+1 to the end
-  digits = digits[:j + 1] + digits[j + 1:][::-1]
+  indNum = indNum[:j + 1] + indNum[j + 1:][::-1]
 
     #.join makes it back into a number
-  return int("".join(map(str, digits)))
+  return int("".join(map(str, indNum)))
 
 
 
