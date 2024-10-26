@@ -24,7 +24,7 @@ def main():
         print("Output for n=1: 0, 1")
         return
     
-    print(f"Output for {n}: ", end="")
+    print(f"Output for integer={n}: ", end="")
     newString = makeSequence(n)
     print(newString[:-2])  # Slice off the last comma and space bc I couldn't figure out how to do it inside the recursive function
 
