@@ -7,6 +7,7 @@
 
 def getNextPerm(num):
   # make the input number into a list
+  
   digits = [int(d) for d in str(num)]
   j = len(digits) - 2  # need the largest j so jk < j(k+1)
 
