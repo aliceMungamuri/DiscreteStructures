@@ -7,7 +7,7 @@
 
 def makeSequence(n, current_sequence="", lastNum="", newString=""):
     if len(current_sequence) == n:
-        output += current_sequence + ", "
+        newString += current_sequence + ", "
         return newString  #returns the new string
     
     # new sequences by adding 1 and 0
