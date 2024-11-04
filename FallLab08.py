@@ -5,21 +5,10 @@
 # Description : Output of transitive closure
 # Collaborators: NONE
 def transitive_closure(M_R):
-    """
-    Compute the transitive closure of a zero-one matrix M_R using matrix multiplication and boolean addition.
-
-    Parameters:
-    M_R (list of list of int): A square matrix of size n x n with binary entries (0 or 1).
-
-    Returns:
-    list of list of int: The transitive closure of the matrix M_R.
-    """
-    if not M_R or len(M_R) != len(M_R[0]):
-        raise ValueError("Input must be a non-empty square matrix.")
 
     n = len(M_R)
-    A = [row[:] for row in M_R]  # Deep copy of M_R
-    B = [row[:] for row in M_R]  # Initialize B as a copy of A
+    A = [row[:] for row in M_R]  
+    B = [row[:] for row in M_R]  #   as a copy of 
 
     # Initialize B as the input matrix M_R
     for i in range(n):
@@ -44,12 +33,7 @@ def transitive_closure(M_R):
     return B
 
 def get_matrix_input():
-    """
-    Function to get user input for the matrix.
 
-    Returns:
-    list of list of int: The input matrix.
-    """
     n = int(input("Enter the size of the matrix (n x n): "))
     print("Enter the matrix values row by row, separated by spaces (Enter a space after the last element of a row):")
     M_R = []
