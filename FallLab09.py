@@ -6,19 +6,13 @@
 # Collaborators: NONE
 
 
-def warshall_algorithm(M_R):
+def algorithm2(MR):
     """
-    Compute the transitive closure of a zero-one matrix using Warshall's algorithm.
-    
-    Parameters:
-    M_R (list of lists): A square matrix (n x n) with binary entries (0 or 1).
-    
-    Returns:
-    list of lists: The transitive closure of the matrix M_R.
+    finds the transitive closure of a zero-one matrix using Warshall's algorithm (Algorithm 2).
     """
-    n = len(M_R)
-    # Copy the input matrix to W (no need for numpy)
-    W = [row[:] for row in M_R]
+    n = len(MR)
+    # Copy the input matrix to W 
+    W = [row[:] for row in MR]
 
     # Implement Warshall's algorithm
     for k in range(n):
@@ -29,46 +23,37 @@ def warshall_algorithm(M_R):
     return W
 
 
-def print_matrix(matrix):
+def printingMatrix(matrix):
     """Utility function to print a matrix."""
     for row in matrix:
         print(' '.join(str(x) for x in row))
 
 
-def get_user_input():
+def getMatrixInput():
     """Function to take matrix input from the user."""
     n = int(input("Enter the size of the matrix (n): "))
-    print(f"Enter the elements of the {n}x{n} matrix row by row (0 or 1):")
+    print(f"Enter the elements of the {n}x{n} matrix row by row (0 or 1) (add a space in between and a space after the last element of a row):")
 
     # Initialize an empty matrix
-    M_R = []
+    MR = []
     
     # Taking input for each row of the matrix
     for i in range(n):
         row = list(map(int, input(f"Row {i + 1}: ").split()))
-        # Ensure the row has exactly n elements
-        if len(row) != n:
-            print(f"Error: Each row must have exactly {n} elements.")
-            return None
-        M_R.append(row)
+        MR.append(row)
     
-    return M_R
+    return MR
 
 
 def main():
-    # Get the input matrix from the user
-    M_R = get_user_input()
-    
-    # If the matrix input is invalid, exit the program
-    if M_R is None:
-        return
+    # Get the input matrix 
+    MR = getMatrixInput()
 
-    # Compute transitive closure
-    transitive_closure = warshall_algorithm(M_R)
+
     
-    # Print the result
+    # Prints the result
     print("\nTransitive Closure:")
-    print_matrix(transitive_closure)
+    printingMatrix(algorithm2(MR))
 
 
 main()
