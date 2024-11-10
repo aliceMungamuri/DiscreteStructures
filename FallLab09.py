@@ -71,5 +71,4 @@ def main():
     print_matrix(transitive_closure)
 
 
-if __name__ == "__main__":
-    main()
+main()
