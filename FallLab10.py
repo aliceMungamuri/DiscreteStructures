@@ -1,6 +1,10 @@
-ementation
-python
-Copy code
+# Name: Alice Mungamuri
+# KUID: 3117704
+# Lab Session Monday 8am
+# LAB Assignment 10
+# Description : Constructing Eulers Circuit
+# Collaborators: NONE
+
 def find_euler_circuit(adj_matrix):
     n = len(adj_matrix)  # Size of the graph
     # Create a graph using adjacency matrix
