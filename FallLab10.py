@@ -2,49 +2,76 @@
 # KUID: 3117704
 # Lab Session Monday 8am
 # LAB Assignment 10
-# Description : Constructing Eulers Circuit
+# Description: Constructing Euler's Circuit with User Input
 # Collaborators: NONE
 
-def find_euler_circuit(adj_matrix):
-    n = len(adj_matrix)  # Size of the graph
-    # Create a graph using adjacency matrix
-    graph = {chr(97 + i): [] for i in range(n)}  # Mapping from 0,1,2,... to 'a','b','c',...
+
+# find the euler circuit
+def eulerCircuit(matrix, vertices):
+    n = len(matrix)
+    
+    # Create a graph 
+    graph = {vertices[i]: [] for i in range(n)}
     for i in range(n):
         for j in range(i + 1, n):
-            if adj_matrix[i][j] == 1:
-                graph[chr(97 + i)].append(chr(97 + j))
-                graph[chr(97 + j)].append(chr(97 + i))
+            if matrix[i][j] == 1:
+                graph[vertices[i]].append(vertices[j])
+                graph[vertices[j]].append(vertices[i])
     
-    # Function to find Euler Circuit using Hierholzer's algorithm
-    def euler_circuit(start_vertex):
-        circuit = []
+    #  finds a subcircuit from thee vertex that is given 
+    def getSub(start_vertex):
+        subcircuit = []
         stack = [start_vertex]
         while stack:
             v = stack[-1]
             if graph[v]:
-                # There are unused edges, take the next one
-                next_vertex = graph[v].pop()
-                graph[next_vertex].remove(v)  # Remove the reverse edge
-                stack.append(next_vertex)
+#removes the edges
+                nextVert = graph[v].pop()
+                graph[nextVert].remove(v)
+                stack.append(nextVert)
             else:
-                # No unused edges, add vertex to circuit and backtrack
-                circuit.append(stack.pop())
-        return circuit
+                subcircuit.append(stack.pop())
+        return subcircuit
+
+    #  Find an initial circui from the frist vertex
+    start_vertex = vertices[0]
+    circuit = getSub(start_vertex)
     
-    # Start from any vertex, here we start with 'a'
-    start = 'a'
-    return euler_circuit(start)
+    # remove the edges from the graph
+    H = {v: edges[:] for v, edges in graph.items()}
 
-# Input
-adj_matrix = [
-    [0, 1, 0, 1],
-    [1, 0, 1, 0],
-    [0, 1, 0, 1],
-    [1, 0, 1, 0]
-]
+    # adding subcircuits
+    i = 0
+    while i < len(circuit):
+        vertex = circuit[i]
+        if H[vertex]:
+            subcircuit = getSub(vertex)
+            
+            # inserts subcircuit in pos i
+            circuit = circuit[:i] + subcircuit + circuit[i+1:]
+        i += 1
 
-# Generate the Euler circuit
-circuit = find_euler_circuit(adj_matrix)
+    return circuit
 
-# Output
-print(', '.join(circuit))
+# takes the user input - tbh I really was consude how to set this up
+def getMatrix():
+# this takes the vertices first
+    vertices = input("Enter the vertices ( remember space-separated): ").split()
+    n = len(vertices)
+    
+#putting in the actual adj matrix with the row labels (like a b c d)
+    matrix = []
+    print("Enter the adjacency matrix with row labels:")
+    for i in range(n):
+        row_input = input().split()
+        row = list(map(int, row_input[1:]))  # so it doesnt take the letter
+        matrix.append(row)
+    
+    return matrix, vertices
+
+# Main execution
+matrix, vertices = getMatrix()
+circuit = eulerCircuit(matrix, vertices)
+
+# Output the result
+print( ', '.join(circuit))
