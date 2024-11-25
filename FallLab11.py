@@ -4,57 +4,56 @@
 # LAB Assignment 11
 # Description:dMethods method
 # Collaborators: NONE
+import math
 def dMethod(graph, start, end):
     """
-    Find the shortest path between two vertices =using Algorithm 1
+    Find the shortest path between two vertices =using Algorithm 1 from 10.6 - for this use alt 236 to use infinity
 
     """
-    import math
 
-    # Initialize distances and previous nodes
+    # makes the distances and previous nodes
     distances = {vertex: math.inf for vertex in graph}
     distances[start] = 0
-    previous_nodes = {vertex: None for vertex in graph}
+    pastNode = {vertex: None for vertex in graph}
     unvisited = set(graph.keys())
 
     while unvisited:
-        # Select the vertex with the smallest distance
-        current_vertex = min(unvisited, key=lambda vertex: distances[vertex])
+        #   this chooses the shortest
+        curVertex = min(unvisited, key=lambda vertex: distances[vertex])
 
-        # If we've reached the destination, stop
-        if current_vertex == end:
+        #  shows thst when it stops
+        if curVertex == end:
             break
 
-        unvisited.remove(current_vertex)
+        unvisited.remove(curVertex)
 
-        for neighbor, weight in graph[current_vertex].items():
+        for neighbor, weight in graph[curVertex].items():
             if neighbor in unvisited:
-                new_distance = distances[current_vertex] + weight
-                if new_distance < distances[neighbor]:
-                    distances[neighbor] = new_distance
-                    previous_nodes[neighbor] = current_vertex
+                replaceDistance = distances[curVertex] + weight
+                if replaceDistance < distances[neighbor]:
+                    distances[neighbor] = replaceDistance
+                    pastNode[neighbor] = curVertex
 
     # Reconstruct the shortest path
     path = []
     current = end
     while current:
         path.insert(0, current)
-        current = previous_nodes[current]
+        current = pastNode[current]
 
     return path, distances[end]
 
 
-def parse_input():
+def LookInput():
+    # the first row is the the letters like the row names (a b c d)
     """
-    Parse the input for the graph and vertices.
+    look through  the graph and vertices.
 
-    Returns:
-    tuple: (graph as an adjacency list, start vertex, end vertex)
+    returns a tuple
     """
-    import math
 
-    print("Enter the weighted adjacency matrix (use ∞ for infinity):")
-    vertices = input().split()  # First row contains the vertex names
+    print("Enter the matrix (use ∞ (that is alt and 236 on the number pad) for infinity):")
+    vertices = input().split()  
     graph = {vertex: {} for vertex in vertices}
 
     for i, row in enumerate(vertices):
@@ -69,7 +68,7 @@ def parse_input():
 
 
 def main():
-    graph, start, end = parse_input()
+    graph, start, end = LookInput()
     path, distance = dMethod(graph, start, end)
     print("Shortest path:", ", ".join(path))
     print("Path length:", distance)
