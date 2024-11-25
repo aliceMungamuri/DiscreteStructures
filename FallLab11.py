@@ -1,14 +1,13 @@
-def dijkstra(graph, start, end):
+# Name: Alice Mungamuri
+# KUID: 3117704
+# Lab Session Monday 8am
+# LAB Assignment 11
+# Description:dMethods method
+# Collaborators: NONE
+def dMethod(graph, start, end):
     """
-    Find the shortest path between two vertices using Dijkstra's algorithm.
+    Find the shortest path between two vertices =using Algorithm 1
 
-    Parameters:
-    graph (dict): Weighted adjacency list representation of the graph.
-    start (str): Starting vertex.
-    end (str): Destination vertex.
-
-    Returns:
-    tuple: (shortest path as a list of vertices, total weight of the path).
     """
     import math
 
@@ -71,10 +70,9 @@ def parse_input():
 
 def main():
     graph, start, end = parse_input()
-    path, distance = dijkstra(graph, start, end)
+    path, distance = dMethod(graph, start, end)
     print("Shortest path:", ", ".join(path))
     print("Path length:", distance)
 
 
-if __name__ == "__main__":
-    main()
+main()
