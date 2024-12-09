@@ -40,15 +40,11 @@ def prefix_to_postfix(prefix_expr):
     return stack[-1]
 
 
-# Example inputs
-examples = [
-    "^ - x y 2",
-    "/ - x y * y z",
-    "+ ^ - x 2 2 ^ - y 1 3"
-]
-
-# Process and print results
-for example in examples:
-    postfix = prefix_to_postfix(example)
-    print(f"Prefix: {example}")
-    print(f"Postfix: {postfix}\n")
+# Main program to take user input
+if __name__ == "__main__":
+    print("Enter a prefix expression (e.g., '^ - x y 2'):")
+    prefix_expr = input().strip()
+    
+    # Convert to postfix and print the result
+    postfix_expr = prefix_to_postfix(prefix_expr)
+    print(f"Postfix expression: {postfix_expr}")
